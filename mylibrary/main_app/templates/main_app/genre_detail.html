@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ genre.name }}</h1>
+<p>{{ genre.description }}</p>
+
+<a href="{% url 'genre-update' genre.id %}">Edit</a> |
+<a href="{% url 'genre-delete' genre.id %}">Delete</a>
+
+<hr>
+
+<h2>Books in this Genre</h2>
+{% for book in genre.book_set.all %}
+  <p><a href="{% url 'book-detail' book.id %}">{{ book.title }}</a></p>
+{% empty %}
+  <p>No books assigned to this genre yet.</p>
+{% endfor %}
+{% endblock %}

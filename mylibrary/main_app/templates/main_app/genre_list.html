@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>All Genres</h1>
+<a href="{% url 'genre-create' %}">Add a Genre</a>
+{% for genre in object_list %}
+  <div>
+    <h2><a href="{% url 'genre-detail' genre.id %}">{{ genre.name }}</a></h2>
+    <p>{{ genre.description }}</p>
+  </div>
+{% empty %}
+  <p>No genres yet.</p>
+{% endfor %}
+{% endblock %}
