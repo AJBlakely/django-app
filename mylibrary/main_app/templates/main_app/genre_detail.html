@@ -4,8 +4,8 @@
 <h1>{{ genre.name }}</h1>
 <p>{{ genre.description }}</p>
 
-<a href="{% url 'genre-update' genre.id %}">Edit</a> |
-<a href="{% url 'genre-delete' genre.id %}">Delete</a>
+<a href="{% url 'genre-update' genre.id %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'genre-delete' genre.id %}" class="btn btn-delete">Delete</a>
 
 <hr>
 

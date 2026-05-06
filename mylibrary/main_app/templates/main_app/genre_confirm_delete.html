@@ -5,7 +5,7 @@
 <p>This action cannot be undone.</p>
 <form method="POST">
   {% csrf_token %}
-  <button type="submit">Yes, Delete</button>
-  <a href="{% url 'genre-detail' genre.id %}">Cancel</a>
+  <button type="submit" class="btn btn-delete">Yes, Delete</button>
+  <a href="{% url 'genre-detail' genre.id %}" class="btn btn-cancel">Cancel</a>
 </form>
 {% endblock %}

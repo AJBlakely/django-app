@@ -73,7 +73,8 @@ class GenreDelete(DeleteView):
     success_url = '/genres/'
 
 
-def associate_genre(request, book_id, genre_id):
+def associate_genre(request, book_id):
+    genre_id = request.POST.get('genre_id')
     Book.objects.get(id=book_id).genres.add(genre_id)
     return redirect('book-detail', book_id=book_id)
 

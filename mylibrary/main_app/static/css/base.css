@@ -1,0 +1,171 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: #f5f0e8;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+/* ── Navbar ── */
+nav {
+  background-image: url('../images/navbar-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 16px 32px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+nav ul li a:hover {
+  border-bottom-color: #fff;
+}
+
+/* ── Main content ── */
+main {
+  max-width: 860px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 24px 0 10px;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 20px 0 8px;
+  color: #444;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 24px 0;
+}
+
+a {
+  color: #5a3e28;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Forms ── */
+form p {
+  margin-bottom: 14px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  margin-top: 4px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #5a3e28;
+  box-shadow: 0 0 0 2px rgba(90, 62, 40, 0.15);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 0.15s, transform 0.1s;
+  line-height: 1.4;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+.btn-save {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #c62828;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #1565c0;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #616161;
+  color: #fff;
+}
+
+.btn-cancel {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}

@@ -14,6 +14,6 @@ urlpatterns = [
     path('genres/<int:pk>/', views.GenreDetail.as_view(), name='genre-detail'),
     path('genres/<int:pk>/update/', views.GenreUpdate.as_view(), name='genre-update'),
     path('genres/<int:pk>/delete/', views.GenreDelete.as_view(), name='genre-delete'),
-    path('books/<int:book_id>/associate-genre/<int:genre_id>/', views.associate_genre, name='associate-genre'),
+    path('books/<int:book_id>/associate-genre/', views.associate_genre, name='associate-genre'),
     path('books/<int:book_id>/remove-genre/<int:genre_id>/', views.remove_genre, name='remove-genre'),
 ]

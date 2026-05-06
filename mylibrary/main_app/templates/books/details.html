@@ -6,28 +6,28 @@
 <p><strong>Year Published:</strong> {{ book.year_published }}</p>
 <p><strong>Description:</strong> {{ book.description }}</p>
 
-<a href="{% url 'book-update' book.id %}">Edit</a> |
-<a href="{% url 'book-delete' book.id %}">Delete</a>
+<a href="{% url 'book-update' book.id %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'book-delete' book.id %}" class="btn btn-delete">Delete</a>
 
 <hr>
 
 <h2>Genres</h2>
 {% for genre in book.genres.all %}
   <span>{{ genre.name }}</span>
-  <a href="{% url 'remove-genre' book.id genre.id %}">Remove</a>
+  <a href="{% url 'remove-genre' book.id genre.id %}" class="btn btn-delete btn-sm">Remove</a>
 {% empty %}
   <p>No genres added yet.</p>
 {% endfor %}
 
 {% if genres %}
-  <form action="{% url 'associate-genre' book.id 0 %}" method="POST">
+  <form action="{% url 'associate-genre' book.id %}" method="POST">
     {% csrf_token %}
-    <select name="genre_id" onchange="this.form.action='{% url 'associate-genre' book.id 0 %}'.replace('0', this.value)">
+    <select name="genre_id">
       {% for genre in genres %}
         <option value="{{ genre.id }}">{{ genre.name }}</option>
       {% endfor %}
     </select>
-    <button type="submit">Add Genre</button>
+    <button type="submit" class="btn btn-primary">Add Genre</button>
   </form>
 {% endif %}
 
@@ -44,6 +44,6 @@
 <form action="{% url 'add-status' book.id %}" method="POST">
   {% csrf_token %}
   {{ status_form.as_p }}
-  <button type="submit">Add Status</button>
+  <button type="submit" class="btn btn-primary">Add Status</button>
 </form>
 {% endblock %}
